@@ -31,7 +31,7 @@ namespace Day2_dataTypes
 
             Console.WriteLine("Here are all the values:");
             Console.WriteLine(); //an empty Console.WriteLine statement prints an empty line
-            Console.WriteLine("Printing without variable names:");
+            Console.WriteLine("Printing with variable names:");
             Console.WriteLine(number);
             Console.WriteLine(text);
             Console.WriteLine(salary);
