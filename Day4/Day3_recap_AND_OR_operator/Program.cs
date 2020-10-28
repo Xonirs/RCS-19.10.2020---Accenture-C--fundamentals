@@ -6,7 +6,31 @@ namespace Day3_recap_AND_OR_operator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int number = 100;
+            string color = "red";
+
+            if (number > 100 || color == "green")
+            {
+                Console.WriteLine("A");
+            }
+
+            if (number >= 100 || color == "green")
+            {
+                Console.WriteLine("B");
+            }
+
+            if (number >= 100 && color == "green")
+            {
+                Console.WriteLine("C");
+            }
+
+            //50 <= x < 100 
+            int x = 65;
+            if (50 <= x && x < 100)
+            {
+
+            }
+
         }
     }
 }
