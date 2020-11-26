@@ -15,7 +15,6 @@ namespace Day15_methods_vol1
             Print1toN(x);
             Print1toN(14);
             //Print1toN(); //this will not work, method needs the parameter
-
             PrintAtoB(19, 27);
             int n = -7;
             PrintAtoB(n, userNumber);
