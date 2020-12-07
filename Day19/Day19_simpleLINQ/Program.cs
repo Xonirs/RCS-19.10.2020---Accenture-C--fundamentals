@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Day19_simpleLINQ
 {
@@ -62,8 +63,46 @@ namespace Day19_simpleLINQ
             {
                 Console.WriteLine("such a person was not found");
             }
-            
+
             //new way: with linq
+            Person personLinq1 = familyMembers.FirstOrDefault(member => member.Age > 30);
+            if (personLinq1 != null) //checking if we found
+            {
+                personLinq1.PrintInfo();
+            }
+
+            //trying to find a first person with white colored eyes
+            //since there are no, then the personLinq2 value will be default -> null
+            Person personLinq2 = familyMembers.FirstOrDefault(x => x.EyeColor == ConsoleColor.White);
+            if (personLinq2 != null) //checking if we found
+            {
+                personLinq2.PrintInfo();
+            }
+            else
+            {
+                Console.WriteLine("such a person WITH WHITE EYES was not found");
+            }
+
+            string findingResult1 = names.FirstOrDefault(n => n == "Ann");
+            if (!string.IsNullOrEmpty(findingResult1)) //checking if we found
+            {
+                Console.WriteLine("There is an Ann in the list");
+            }
+            else
+            {
+                Console.WriteLine("such a person WITH NAME ANN was not found");
+            }
+
+            Person personLinq3 = familyMembers.FirstOrDefault(x => x.Age > 18 && x.HasSeenHarryPotter);
+            if (personLinq3 != null) //checking if we found
+            {
+                Console.WriteLine("This person has seen HP and is older than 18");
+                personLinq3.PrintInfo();
+            }
+            else
+            {
+                Console.WriteLine("such a person  was not found");
+            }
         }
     }
 }
