@@ -18,7 +18,7 @@ namespace Day22_debug
 
         static int GetMagicNumber(int number)
         {
-            int result = number - 7;
+            int result = number - 6;
 
             result += number * 7;
 
@@ -28,10 +28,18 @@ namespace Day22_debug
             }
             else
             {
+                result = GetZombieNumber(result);
                 result -= 50;
             }
 
             return result;
+        }
+
+        static int GetZombieNumber(int number)
+        {
+            int zombie = number - 30;
+            zombie *= -17;
+            return zombie;
         }
     }
 }
