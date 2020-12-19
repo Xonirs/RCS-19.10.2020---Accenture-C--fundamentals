@@ -15,19 +15,20 @@ namespace Day23_Mom
         static void Main(string[] args)
         {
             Mom myMom = new Mom();
-            myMom.Children.Add(new Child("Bob", 3, HairColor.Brown));
+            var child1 = new Child("Bob", 3, HairColor.Brown);
+            myMom.Children.Add(child1);
             myMom.Children.Add(new Child("Ann", 6, HairColor.Blue));
             myMom.Children.Add(new Child("Peter", 3, HairColor.Brown));
             myMom.Children.Add(new Child("Ernest", 13, HairColor.Gray));
             myMom.Children.Add(new Child("Marry", 23, HairColor.Green));
 
-            List<Child> oldChildren = myMom.Children.Where(c => c.Age > 5).ToList();
+            List<Child> oldChildren = myMom.Children.Where(x => x.Age > 5).ToList();
             PrintChildrenInfo(oldChildren, "Here are children above age 5:");
 
-            List<Child> brownColorChildren = myMom.Children.Where(c => c.HairColor == HairColor.Brown).ToList();
+            List<Child> brownColorChildren = myMom.Children.Where(test => test.HairColor == HairColor.Brown).ToList();
             PrintChildrenInfo(brownColorChildren, "Here are children with brown hair:");
 
-            Child bobChild = myMom.Children.FirstOrDefault(c => c.Name == "Bob");
+            Child bobChild = myMom.Children.FirstOrDefault(child => child.Name == "Bob");
             PrintChildrenInfo(bobChild, "Here is a child named Bob:");
 
             List<Child> eChildren = myMom.Children.Where(c => c.Name.Contains("e")).ToList();
