@@ -1,0 +1,8 @@
+--CREATE DATABASE Test
+
+/*
+CREATE DATABASE Test
+
+*/
+
+DROP DATABASE Test
